@@ -102,7 +102,8 @@ section {
 }
 body {
   line-height: 1;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Quicksand', sans-serif;
 }
 ol,
 ul {
@@ -126,6 +127,36 @@ table {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* GERAL */
+
+.titulo-interno {
+  font-family: 'Dancing Script';
+  font-weight: 400;
+  font-size: 64px;
+  color: #FF8C9E;
+  line-height: 0.2;
+}
+
+.titulo-interno::after{
+  content: "";
+  width: 100%;
+  background-color: #00BACD;
+  height: 4px;
+  display: inline-block;
+  border-radius: 50%;
+  z-index: -2;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 40px; 
 }
 
 /* HEADER */
@@ -200,7 +231,7 @@ a {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .header-menu {
     gap: 12px;
   }
@@ -211,9 +242,9 @@ a {
   }
 }
 
-/* intro */
+/* BANNER */
 
-.intro {
+.banner {
   background: url(../img/cover.png) no-repeat center;
   background-size: cover;
   width: 100%;
@@ -221,11 +252,12 @@ a {
   padding-top: 140px;
 }
 
-.intro-desc {
+.banner-desc {
   display: grid;
   gap: 30px;
   text-align: center;
   justify-content: center;
+  align-items: center;
   padding-top: 150px;
   padding-left: 200px;
 }
@@ -245,38 +277,164 @@ a {
   box-shadow: 1.71516px 1.71516px 1.71516px rgba(0, 0, 0, 0.25);
 }
 
-.intro-desc p {
+.banner-desc p {
   color: #c59b6c;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.25rem;
 }
 
 @media (max-width: 900px) {
-  .intro {
-    height: 300px;
+  .banner {
+    height: auto;
     padding-top: 75px;
+    background-position: right;
   }
-  .intro-desc {
+  .banner-desc {
     padding: 0px;
     gap: 20px;
+    padding-bottom: 50px;
   }
-  .intro-desc img{
+  .banner-desc img{
     justify-self: center;
     width: 65%;
   }
-  .intro-desc p {
+  .banner-desc p {
     padding: 0 10px;
     line-height: 1.33;
   }
 }
 
-@media (max-width: 600px) {
-  .intro-desc p {
+@media (max-width: 700px) {
+  
+  .banner-desc p {
     font-size: 0.9rem;
   }
   .buttom {
     font-size: 0.9rem;
     padding: 6px 10px;
   }
+}
+
+/* INTRO */
+
+.intro {
+  height: 500px;
+  display: grid;
+  align-items: center;
+}
+
+.intro-desc {   
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.intro-desc p{
+  font-weight: 600;
+  font-size: 24px;
+  color: #D6954D;
+  max-width: max-content;
+  padding-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .intro .titulo-interno{
+    font-size: 40px;
+  }
+
+  .intro-desc p {
+    font-size: 20px;
+  }
+
+  .intro-desc img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .intro {
+    height: 350px;
+  }
+
+  .intro .titulo-interno{
+    font-size: 30px;
+  }
+
+  .intro-desc p {
+    font-size: 16px;
+  }  
+}
+
+/* BIOGRAFIA */
+
+#biografia {
+  background-color: #FFECEF;
+  min-height: 1100px;
+}
+
+#biografia .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 40px;
+  padding: 40px 40px;
+  justify-items: center;
+}
+
+.biografia-perfil {
+  grid-column: 1;
+  grid-row: 2/ -1;
+}
+
+.biografia-logo {
+  grid-column: 2;
+}
+
+.biografia-desc {
+  grid-column: 2;
+  font-weight: 500;
+  font-size: 18px;
+  color: #A9763D;
+  line-height: 1.33;
+}
+
+#biografia .container div{
+  grid-column: 2;
+}
+
+@media (max-width: 900px) {
+  #biografia .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+  }
+  .biografia-perfil {
+    grid-column: unset;/* 
+    grid-row: 2; */
+    border-radius: 50%;
+  }
+  
+  .biografia-logo {
+    grid-column: unset;
+  }
+  
+  .biografia-desc {
+    grid-column: unset;
+    font-size: 16px;
+  }
+
+  #biografia .container div{
+    grid-column: unset;
+  }
+}
+
+/* ESPECIALIDADES */
+
+#especialidades {
+  background-image: url(../img/especialidades-bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#especialidades .container {
+  background: rgba(0,0,0,0.15);
 }
