@@ -102,8 +102,8 @@ section {
 }
 body {
   line-height: 1;
-  font-family: 'Dancing Script', cursive;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Dancing Script", cursive;
+  font-family: "Quicksand", sans-serif;
 }
 ol,
 ul {
@@ -136,27 +136,29 @@ img {
 /* GERAL */
 
 .titulo-interno {
-  font-family: 'Dancing Script';
+  font-family: "Dancing Script";
   font-weight: 400;
   font-size: 64px;
-  color: #FF8C9E;
+  color: #ff8c9e;
   line-height: 0.2;
+  display: inline-block;
+  padding: 60px 0 20px;
 }
 
-.titulo-interno::after{
+.titulo-interno::after {
   content: "";
   width: 100%;
-  background-color: #00BACD;
+  background-color: #00bacd;
   height: 4px;
   display: inline-block;
   border-radius: 50%;
   z-index: -2;
 }
 
-.container{
+.container {
   max-width: 1200px;
-  margin: 0 auto; 
-  padding: 0 40px; 
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 /* HEADER */
@@ -294,7 +296,7 @@ img {
     gap: 20px;
     padding-bottom: 50px;
   }
-  .banner-desc img{
+  .banner-desc img {
     justify-self: center;
     width: 65%;
   }
@@ -305,7 +307,6 @@ img {
 }
 
 @media (max-width: 700px) {
-  
   .banner-desc p {
     font-size: 0.9rem;
   }
@@ -323,22 +324,21 @@ img {
   align-items: center;
 }
 
-.intro-desc {   
+.intro-desc {
   display: grid;
   justify-items: center;
   text-align: center;
 }
 
-.intro-desc p{
+.intro-desc p {
   font-weight: 600;
   font-size: 24px;
-  color: #D6954D;
+  color: #d6954d;
   max-width: max-content;
-  padding-top: 30px;
 }
 
 @media (max-width: 600px) {
-  .intro .titulo-interno{
+  .intro .titulo-interno {
     font-size: 40px;
   }
 
@@ -356,19 +356,19 @@ img {
     height: 350px;
   }
 
-  .intro .titulo-interno{
+  .intro .titulo-interno {
     font-size: 30px;
   }
 
   .intro-desc p {
     font-size: 16px;
-  }  
+  }
 }
 
 /* BIOGRAFIA */
 
 #biografia {
-  background-color: #FFECEF;
+  background-color: #ffecef;
   min-height: 1100px;
 }
 
@@ -394,11 +394,11 @@ img {
   grid-column: 2;
   font-weight: 500;
   font-size: 18px;
-  color: #A9763D;
+  color: #a9763d;
   line-height: 1.33;
 }
 
-#biografia .container div{
+#biografia .container div {
   grid-column: 2;
 }
 
@@ -408,21 +408,21 @@ img {
     grid-template-rows: unset;
   }
   .biografia-perfil {
-    grid-column: unset;/* 
+    grid-column: unset; /* 
     grid-row: 2; */
     border-radius: 50%;
   }
-  
+
   .biografia-logo {
     grid-column: unset;
   }
-  
+
   .biografia-desc {
     grid-column: unset;
     font-size: 16px;
   }
 
-  #biografia .container div{
+  #biografia .container div {
     grid-column: unset;
   }
 }
@@ -430,11 +430,127 @@ img {
 /* ESPECIALIDADES */
 
 #especialidades {
-  background-image: url(../img/especialidades-bg.jpg);
+  background: url(../img/especialidade-bg.png) center no-repeat, #fffeee;
   background-attachment: fixed;
   background-size: cover;
+  text-align: center;
 }
 
 #especialidades .container {
-  background: rgba(0,0,0,0.15);
+  display: grid;
+  text-align: center;
+  gap: 40px;
 }
+
+.especialidade1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 40px;
+}
+
+.especialidade2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.especialidade img {
+  border-radius: 50%;
+}
+
+.especialidade1 p,
+.especialidade2 p {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 27px;
+  color: #93693b;
+}
+
+@media (max-width: 900px) {
+  .especialidade1,
+  .especialidade2 {
+    grid-template-columns: 1fr;
+  }
+
+  .especialidade1 {
+    border: #c59b6c solid 2px;
+    padding: 20px;
+  }
+
+  .especialidade2 {
+    margin-top: 40px;
+    border: #c59b6c solid 2px;
+    padding: 20px;
+  }
+
+  .especialidade2 img {
+    grid-row: 2;
+  }
+}
+
+/* DEPOIMENTO */
+
+#depoimento {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+#depoimento p {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 27px;
+  color: #93693b;
+}
+
+#depoimento .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+}
+
+@media (max-width: 900px) {
+  #depoimento .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+
+#contato {
+  background: url(../img/cover_contato.png) center no-repeat;
+  height: 500px;
+}
+
+#contato h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  color: #ffffff;
+  font-size: 4rem;
+  text-align: center;
+  padding-top: 40px;
+}
+
+#contato .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 40px;
+}
+
+.redes {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+
