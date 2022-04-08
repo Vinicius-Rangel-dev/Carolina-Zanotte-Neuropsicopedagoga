@@ -531,6 +531,7 @@ img {
 #contato {
   background: url(../img/cover_contato.png) center no-repeat;
   height: 500px;
+  margin: 0 auto;
 }
 
 #contato h3 {
